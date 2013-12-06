@@ -1,9 +1,11 @@
 <?php
+use LaravelBook\Ardent\Ardent;
 
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
+
+class User extends Ardent implements UserInterface, RemindableInterface {
 
 	/**
 	 * The database table used by the model.
@@ -18,6 +20,36 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var array
 	 */
 	protected $hidden = array('password');
+
+
+	/**
+	 * Protect against mass assignment
+	 */
+	protected $fillable = array('username','email');
+
+
+	/**
+	 * Also protects against mass assignment
+	 */
+	protected $guarded = array('id','password');
+
+
+	/**
+	 * Validation Rules
+	 */
+
+	public static $rules = array(
+		'username' => 'required|between:4,16',
+		'email' => 'required|email',
+		'password' => 'required|alpha_num|min:8|confirmed',
+		'password_confirmation' => 'required|alpha_num|min:8',
+	);
+
+	/**
+	 * Auto Purge Redundant Data
+	 */
+
+	public $autoPurgeRedundantAttributes = true;
 
 	/**
 	 * Get the unique identifier for the user.

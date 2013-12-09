@@ -28,5 +28,16 @@
 			$this->assertEquals($errors[0],"The username field is required.");
 		}
 
+		// public function testUserIdIsRequired()
+		// {
+		// 	//Create new post
+		// 	$post = new Post;
+
+		// 	//Set the body
+		// 	$post->body = "Yada yada yada";
+
+		// 	$
+		// }
+
 
 	}

@@ -24,15 +24,14 @@ Route::get('/user', function()
 	$user->email = 'dave.rome.925@gmail.com';
 	$user->password = 'deadgiveaway';
 	$user->password_confirmation = 'deadgiveaway';
-	var_dump($user->save());
-	*/
+	var_dump($user->save());	*/
 
-	// Create a new Post
-	/*$post = new Post(array('body' => 'Yada yada yada'));
-	// Grab User 1
-	$user = User::find(1);
-	// Save the Post
-	$user->posts()->save($post);
+	// //Create a new Post
+	// $post = new Post(array('body' => 'Yada yada yada'));
+	// //Grab User 1
+	// $user = User::find(1);
+	// //Save the Post
+	// $user->posts()->save($post);
 
-	*/
+	
 });

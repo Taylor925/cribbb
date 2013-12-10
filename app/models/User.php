@@ -41,7 +41,7 @@ class User extends Magniloquent implements UserInterface, RemindableInterface {
 
 	public static $rules = array(
 	  "save" => array(
-	    'username' => 'required|min:4',
+	    'username' => 'required|min:2',
 	    'email' => 'required|email',
 	    'password' => 'required|min:8'
 	  ),
@@ -50,6 +50,7 @@ class User extends Magniloquent implements UserInterface, RemindableInterface {
 	    'email' => 'unique:users',
 	    'password' => 'confirmed',
 	    'password_confirmation' => 'required|min:8'
+
 	  ),
 	  "update" => array()
 	);
@@ -108,4 +109,28 @@ class User extends Magniloquent implements UserInterface, RemindableInterface {
 	  'password_confirmation' => 'password'
 	);
 
+
+	/**
+	 * User following relationsihp
+	 */
+	public function follow()
+	{
+		return $this->belongsTomany('User','user_follows','follow_id')->withTimestamps();
+	}
+
+
+	/**
+	 * User followers relationship
+	 */
+	public function followers()
+	{
+		return $this->belongsToMany('User','user_follows','user_id');
+	}
+
+	/**
+	 * Clique relationship
+	 */
+	public function clique(){
+		return $this->belongsToMany('clique');
+	}	
 }

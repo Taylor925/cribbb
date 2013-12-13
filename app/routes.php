@@ -16,6 +16,9 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
+Route::get('/test', function(){
+	echo Supyo::greeting();
+});
 
 Route::get('/user', function()
 {

@@ -54,6 +54,7 @@ add-apt-repository ppa:ondrej/php5
 #Update
 apt-get update
 
+apt-get install -y php5
 #PHP More stuff
 # Command line
 apt-get install -y php5-cli

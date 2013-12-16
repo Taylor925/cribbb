@@ -107,7 +107,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
-		'Sloshdev\Supyo\SupyoServiceProvider'
+		'Sloshdev\Supyo\SupyoServiceProvider',
+		'Cribbb\Storage\StorageServiceProvider'
 
 	),
 
